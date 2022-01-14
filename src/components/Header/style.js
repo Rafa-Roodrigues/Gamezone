@@ -86,7 +86,7 @@ export const NavMobile = styled.nav`
   }
 `;
 
-export const BoxLogo = styled(Link)`
+export const LinkPageHome = styled(Link)`
   display: flex;
   align-items: center;
 
@@ -153,26 +153,33 @@ export const BoxCartLogin = styled.div`
       margin-right: 1rem;
     }
   }
+`;
 
-  button#cart {
-    position: relative;
+export const LinkPageCart = styled(Link)`
+  position: relative;
 
-    span {
-      width: 18px;
-      height: 18px;
+  display: flex;
+  align-items: center;
 
-      font-size: 12px;
-      color: #ffffff;
+  svg {
+    margin-right: 1rem;
+  }
 
-      background: purple;
-      border-radius: 50%;
-      position: absolute;
-      top: -10px;
-      right: 5px;
+  span {
+    width: 18px;
+    height: 18px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    font-size: 12px;
+    color: #ffffff;
+
+    background: purple;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

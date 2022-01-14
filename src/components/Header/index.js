@@ -1,4 +1,4 @@
-import { Container, BoxLogo, Nav, BoxCartLogin, MenuToggle, NavMobile } from './style';
+import { Container, LinkPageHome, Nav, BoxCartLogin, MenuToggle, NavMobile, LinkPageCart } from './style';
 
 import { FaUserCircle, FaShoppingCart} from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg'; 
@@ -12,9 +12,9 @@ export function Header() {
 
   return (
     <Container>
-      <BoxLogo to="#">
+      <LinkPageHome to="/">
         <img src={logoIMG} alt="logo da gamezone" />
-      </BoxLogo>
+      </LinkPageHome>
 
       <Nav>
         <ul>
@@ -24,10 +24,10 @@ export function Header() {
         </ul>
 
         <BoxCartLogin>
-          <button id="cart">
+          <LinkPageCart to="/cart">
             <span>0</span>
-            <FaShoppingCart id="cart" size={25}/>
-          </button>
+            <FaShoppingCart size={25}/>
+          </LinkPageCart>
           <button>
             <FaUserCircle id="user" size={25}/>
           </button>
