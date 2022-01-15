@@ -10,6 +10,12 @@ import { useState } from 'react';
 export function Header() {
   const [statusMenuToggle, setStatusMenuToggle] = useState(false);
 
+  window.addEventListener("resize", (event) => {
+    if( event.currentTarget.innerWidth > 600 && statusMenuToggle) {
+      setStatusMenuToggle(false);
+    }
+  })
+
   return (
     <Container>
       <LinkPageHome to="/">
@@ -35,23 +41,22 @@ export function Header() {
       </Nav>
 
       <NavMobile status={statusMenuToggle}>
-        <button onClick={() => setStatusMenuToggle(false)}>
-          <CgClose color="#ffffff" size={30}/>
-        </button>
-        <ul>
-          <li>
-            <Link onClick={() => setStatusMenuToggle(false)} to="">Home</Link>
-          </li>
-          <li>
-            <Link onClick={() => setStatusMenuToggle(false)} to="">Consoles</Link>
-          </li>
-          <li>
-            <Link onClick={() => setStatusMenuToggle(false)} to="">Jogos</Link>
-          </li>
-        </ul>
+        <div>
+          <ul>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/">Home</Link>
+            </li>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/consoles">Consoles</Link>
+            </li>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/games">Jogos</Link>
+            </li>
+          </ul>
+        </div>
       </NavMobile>
 
-      <MenuToggle onClick={() => setStatusMenuToggle(true)}>
+      <MenuToggle status={statusMenuToggle} onClick={() => setStatusMenuToggle(!statusMenuToggle)}>
         <span></span>
       </MenuToggle>
       

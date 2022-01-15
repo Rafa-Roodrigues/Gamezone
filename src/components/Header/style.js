@@ -47,43 +47,51 @@ export const Nav = styled.nav`
 export const NavMobile = styled.nav`
   position: fixed;
   inset: 0;
-  background: #000000;
-  z-index: 2;
 
-  padding: 1rem;
+  display: flex;
+  justify-content: right;
 
-  display: ${({status}) => status ? 'flex': 'none'};
-  flex-direction: column;
-  align-items: center;
+  margin-left: ${({status}) => status ? '0' : '8000px'};
 
-  button {
-    align-self: end;
-  }
+  transition: margin 0.2s;
+  background: rgba(0, 0, 0, 0.8);
 
-  ul {
-    width: 100%;
-    margin-top: 2.5rem;
+  div {
+    width: 80%;
+    min-height: 100%;
 
-    li {
-      width: 100%;
-      display: block;
-      margin-bottom: 0.625rem;
+    background: #ffffff;
+
+    display: ${({status}) => status ? 'block' : 'none'};
+
+    padding-top: 4.375rem;
+
+    ul {
+      background: #ffffff;
+      padding-top: 1rem;
+
+      li {
+        width: 90%;
+      
+        padding: 1rem;
+        margin: 0 auto 1rem;
+
+        text-align:center;
+        font-size: 1.125rem;
+        
+        background: #ffffff;
+        border-radius: 5px;
+        transition: filter 0.2s;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5) ; /*horizontal vertical espalhamento*/
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
+      }
     }
-
-    a {
-      width: 100%;
-
-      display: block;
-
-      background: purple;
-      border-radius: 5px;
-
-      color: #fafafa;
-      text-align: center;
-
-      padding: 10px;
-    }
   }
+  
 `;
 
 export const LinkPageHome = styled(Link)`
@@ -98,7 +106,7 @@ export const LinkPageHome = styled(Link)`
 
 export const MenuToggle = styled.button`
   width: 25px;
-  height: 15px;
+  height: 16px;
 
   position: relative;
   z-index: 1;
@@ -110,30 +118,32 @@ export const MenuToggle = styled.button`
     width: 100%;
     height: 2px;
     background: #000000;
+
+    display: ${({status}) => status ? 'none' : 'block'};
+  }
+
+  &::before, &::after {
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background: #000000;
+    transition: 0.2s;
   }
 
   &::before {
-    content: '';
-
-    width: 100%;
-    height: 2px;
-
-    background: #000000;
-    position: absolute;
-    bottom: 0;
+    top: ${({status}) => status ? '7px' : 0};
     left: 0;
+    transform: ${({status}) => status ? 'rotate(45deg)' : 'none'};
   }
 
   &::after {
-    content: '';
-
-    width: 100%;
-    height: 2px;
-
-    background: #000000;
-    position: absolute;
-    top: 0;
+    bottom: ${({status}) => status ? '7px' : 0};
     left: 0;
+    transform: ${({status}) => status ? 'rotate(-45deg)' : 'none'};
   }
 
   @media (min-width: 601px) {
