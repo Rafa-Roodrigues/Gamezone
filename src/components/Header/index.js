@@ -18,9 +18,9 @@ export function Header() {
 
       <Nav>
         <ul>
-          <li><Link to="">Home</Link></li>
-          <li><Link to="">Consoles</Link></li>
-          <li><Link to="">Jogos</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/consoles">Consoles</Link></li>
+          <li><Link to="/games">Jogos</Link></li>
         </ul>
 
         <BoxCartLogin>

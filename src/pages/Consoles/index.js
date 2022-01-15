@@ -5,11 +5,11 @@ import { api } from '../../services/api';
 import { useState, useEffect } from "react";
 
 
-export function Home() {
+export function Consoles() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get("products").then(response => setProducts(response.data.products));
+    api.get("consoles").then(response => setProducts(response.data.products));
   }, []);
 
   return (

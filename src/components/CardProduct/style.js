@@ -8,13 +8,10 @@ export const Card = styled.div`
 
   font-size: 1rem;
 
-  /* background: #ffffff; */
-
   #box-image {
     display: flex;
     justify-content: center;
 
-    /* background: #ffffff; */
     img {
       max-width: 150px;
       width:100%;

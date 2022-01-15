@@ -1,6 +1,5 @@
 import { Card, LinkPageProduct } from './style';
 
-import gameIMG from '../../assets/games/call-of-duty.png';
 import { formatCurrency } from '../../utils/formatCurrency';
 
 export function CardProduct({id, name, price, image }) {
@@ -11,7 +10,7 @@ export function CardProduct({id, name, price, image }) {
         <strong>{name}</strong>
         <span>{formatCurrency(price)}</span>
       </div>
-      <LinkPageProduct to="/product">Ver Detalhes</LinkPageProduct>
+      <LinkPageProduct to={`/product/${id}`}>Ver Detalhes</LinkPageProduct>
     </Card>
   )
 }
