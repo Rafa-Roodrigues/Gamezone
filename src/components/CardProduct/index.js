@@ -1,6 +1,5 @@
-import { Card, LinkPageProduct } from './style';
-
 import { formatCurrency } from '../../utils/formatCurrency';
+import { Card, LinkPageProduct } from './style';
 
 export function CardProduct({id, name, price, image }) {
   return (

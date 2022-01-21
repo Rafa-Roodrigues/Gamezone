@@ -51,20 +51,36 @@ export const NavMobile = styled.nav`
   display: flex;
   justify-content: right;
 
+  z-index: 1;
+
   margin-left: ${({status}) => status ? '0' : '8000px'};
 
   transition: margin 0.2s;
   background: rgba(0, 0, 0, 0.8);
 
-  div {
+  > div {
     width: 80%;
     min-height: 100%;
+    height: 100%;
 
     background: #ffffff;
 
-    display: ${({status}) => status ? 'block' : 'none'};
+    display: ${({status}) => status ? 'flex' : 'none'};
+    flex-direction: column;
 
-    padding-top: 4.375rem;
+    #box-close-modal {
+      height: 4.375rem;
+      text-align: right;
+      padding: 0 1rem;
+
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      button {
+        background: transparent;
+      }
+    }
 
     ul {
       background: #ffffff;
@@ -109,46 +125,9 @@ export const MenuToggle = styled.button`
   height: 16px;
 
   position: relative;
-  z-index: 1;
 
   display: flex;
   align-items: center;
-
-  span {
-    width: 100%;
-    height: 2px;
-    background: #000000;
-
-    display: ${({status}) => status ? 'none' : 'block'};
-  }
-
-  &::before, &::after {
-    content: '';
-
-    position: absolute;
-
-    width: 100%;
-    height: 2px;
-
-    background: #000000;
-    transition: 0.2s;
-  }
-
-  &::before {
-    top: ${({status}) => status ? '7px' : 0};
-    left: 0;
-    transform: ${({status}) => status ? 'rotate(45deg)' : 'none'};
-  }
-
-  &::after {
-    bottom: ${({status}) => status ? '7px' : 0};
-    left: 0;
-    transform: ${({status}) => status ? 'rotate(-45deg)' : 'none'};
-  }
-
-  @media (min-width: 601px) {
-    display: none;
-  }
 `;
 
 export const BoxCartLogin = styled.div`

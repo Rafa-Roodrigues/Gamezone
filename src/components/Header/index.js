@@ -1,12 +1,22 @@
-import { Container, LinkPageHome, Nav, BoxCartLogin, MenuToggle, NavMobile, LinkPageCart } from './style';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { FaUserCircle, FaShoppingCart} from 'react-icons/fa';
-import { CgClose } from 'react-icons/cg'; 
-import { Link } from 'react-router-dom';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { GrClose } from 'react-icons/gr';
 
 import logoIMG from '../../assets/logo.svg';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+
+import { 
+  Container, 
+  LinkPageHome, 
+  Nav, 
+  BoxCartLogin, 
+  MenuToggle, 
+  NavMobile, 
+  LinkPageCart 
+} from './style';
 
 export function Header() {
   const [statusMenuToggle, setStatusMenuToggle] = useState(false);
@@ -44,22 +54,28 @@ export function Header() {
 
       <NavMobile status={statusMenuToggle}>
         <div>
+          <div id="box-close-modal">
+            <button onClick={() => setStatusMenuToggle(false)}><GrClose size={24}/></button>
+          </div>
           <ul>
-            <li>
-              <Link onClick={() => setStatusMenuToggle(false)} to="/">Home</Link>
-            </li>
-            <li>
-              <Link onClick={() => setStatusMenuToggle(false)} to="/consoles">Consoles</Link>
-            </li>
-            <li>
-              <Link onClick={() => setStatusMenuToggle(false)} to="/games">Jogos</Link>
-            </li>
+            <Link onClick={() => setStatusMenuToggle(false)} to="/">
+              <li>Home</li>
+            </Link>
+            <Link onClick={() => setStatusMenuToggle(false)} to="/consoles">
+              <li>Consoles</li>
+            </Link>
+            <Link onClick={() => setStatusMenuToggle(false)} to="/games">
+              <li>Jogos</li>
+            </Link>
           </ul>
         </div>
       </NavMobile>
 
-      <MenuToggle status={statusMenuToggle} onClick={() => setStatusMenuToggle(!statusMenuToggle)}>
-        <span></span>
+      <MenuToggle 
+        status={statusMenuToggle} 
+        onClick={() => setStatusMenuToggle(true)}
+      >
+       <AiOutlineMenu size={22} />
       </MenuToggle>
     </Container>
   )

@@ -1,12 +1,12 @@
-import { CardProduct } from "../../components/CardProduct";
-import { Container } from './style';
-
-import { api } from '../../services/api';
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
+import { CardProduct } from "../../components/CardProduct";
 import { Loading } from '../../components/Loading';
 
+import { api } from '../../services/api';
+
+import { Container } from './style';
 
 export function Games() {
   const [products, setProducts] = useState([]);

@@ -10,6 +10,7 @@ import { Games } from '../pages/Games';
 import { InfoProduct } from "../pages/InfoProduct";
 
 import { ToastContainer } from 'react-toastify';
+import { NotFound } from "../components/NotFound";
 
 export function Router() {
   return (
@@ -23,6 +24,7 @@ export function Router() {
           <Route path="/consoles" element={<Consoles/>}/>
           <Route path="/games" element={<Games/>}/>
           <Route path="/cart" element={<Cart/>}/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </main>
       <Footer/>

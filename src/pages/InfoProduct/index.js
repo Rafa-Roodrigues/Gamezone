@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
-
 import { formatCurrency } from '../../utils/formatCurrency';
+import { addProductToCart } from '../../feature/cart/cartSlice';
 import { api } from '../../services/api';
 
-import { addProductToCart } from '../../feature/cart/cartSlice';
-
-import { Container, Back } from './style';
 import { Loading } from '../../components/Loading';
+import { Back } from '../../components/Back';
+
+import { Container } from './style';
 
 export function InfoProduct() {
   const [product, setProduct] = useState({});
@@ -36,9 +35,7 @@ export function InfoProduct() {
   return (
     product.length > 0 ? (
       <>
-        <Back>
-          <button onClick={() => navigate('/')}>Voltar</button>
-        </Back>
+        <Back endpoint={'/'}>Voltar</Back>
         <Container>
           <div id="box-image">
             <img src={product[0].image} alt={product[0].name} />
