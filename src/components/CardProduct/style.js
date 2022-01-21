@@ -26,10 +26,13 @@ export const Card = styled.div`
     justify-content: flex-end;
 
     margin: 0.5rem 0;
+
+    /* background: orange; */
   }
 
   span {
     font-size: 0.9375rem;
+    margin-top: 5px;
   }
 `;
 
@@ -44,7 +47,7 @@ export const LinkPageProduct = styled(Link)`
   text-align: center;
 
   margin-top: auto;
-  padding: 0.3125rem 0;
+  padding: 0.5rem 0;
 
   &:hover {
     filter: brightness(0.9);

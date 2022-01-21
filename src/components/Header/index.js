@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 
 import logoIMG from '../../assets/logo.svg';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export function Header() {
   const [statusMenuToggle, setStatusMenuToggle] = useState(false);
+  const quantityOfCartInProduct = useSelector(state => state.cart.items.length);
 
   window.addEventListener("resize", (event) => {
     if( event.currentTarget.innerWidth > 600 && statusMenuToggle) {
       setStatusMenuToggle(false);
     }
-  })
+  });
 
   return (
     <Container>
@@ -31,7 +33,7 @@ export function Header() {
 
         <BoxCartLogin>
           <LinkPageCart to="/cart">
-            <span>0</span>
+            <span>{quantityOfCartInProduct}</span>
             <FaShoppingCart size={25}/>
           </LinkPageCart>
           <button>
@@ -59,7 +61,6 @@ export function Header() {
       <MenuToggle status={statusMenuToggle} onClick={() => setStatusMenuToggle(!statusMenuToggle)}>
         <span></span>
       </MenuToggle>
-      
     </Container>
   )
 }

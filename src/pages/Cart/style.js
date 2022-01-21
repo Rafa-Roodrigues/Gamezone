@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   max-width: 1000px;
@@ -170,4 +171,28 @@ export const Summary = styled.div`
   @media (max-width: 500px) {
     flex-direction: column-reverse;
   }
+`;
+
+export const EmptyCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  p {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+  }
+`;
+
+export const LinkPageCart = styled(Link)`
+  background: purple;
+  border-radius: 5px;
+  color: #ffffff;
+
+  padding: 10px 15px;
+  margin-top: 10px;
+
+  font-weight: bold;
 `;

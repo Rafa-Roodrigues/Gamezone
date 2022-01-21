@@ -9,9 +9,12 @@ import { Consoles } from '../pages/Consoles';
 import { Games } from '../pages/Games';
 import { InfoProduct } from "../pages/InfoProduct";
 
+import { ToastContainer } from 'react-toastify';
+
 export function Router() {
   return (
     <BrowserRouter>
+      <ToastContainer/>
       <Header/>
       <main>
         <Routes>

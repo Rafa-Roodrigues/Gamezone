@@ -5,7 +5,7 @@ import { formatCurrency } from '../../utils/formatCurrency';
 export function CardProduct({id, name, price, image }) {
   return (
     <Card>
-      <div id="box-image"><img src={image} alt="" /></div>
+      <div id="box-image"><img src={image} alt={name}/></div>
       <div id="box-info">
         <strong>{name}</strong>
         <span>{formatCurrency(price)}</span>

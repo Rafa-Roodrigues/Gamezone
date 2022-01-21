@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: calc(100vh - 9.375rem);
     background: #F1F1F1;
 
-    padding: 2rem 1rem 2rem;
+    padding: 1.5rem 1rem 2rem;
   }
 
   a {

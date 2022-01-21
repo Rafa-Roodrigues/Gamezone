@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   max-width: var(--max-width);
@@ -8,8 +9,7 @@ export const Container = styled.section`
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
-  /* background: orange; */
+  gap: 20px;
 
   img {
     width: 100%;
@@ -43,10 +43,6 @@ export const Container = styled.section`
     justify-content: center;
   }
 
-  #box-info {
-    padding: 1.5rem 0;
-  }
-
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
 
@@ -57,5 +53,21 @@ export const Container = styled.section`
     button {
       width: 100%;
     }
+  }
+`;
+
+
+export const Back = styled.div`
+  margin: 0 auto 1.5rem;
+  max-width: var(--max-width);
+
+  button {
+    padding: 0.625rem 3.125rem;
+    background: #fff;
+    box-shadow: 0px 0px 2px #cccccc;
+  }
+
+  @media (min-width: 800px) {
+    padding: 0 1rem;
   }
 `;
