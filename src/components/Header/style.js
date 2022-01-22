@@ -61,6 +61,7 @@ export const NavDesktop = styled.nav`
         border-radius: 50%;
 
         font-size: 0.75rem;
+        color: #ffffff;
 
         position: absolute;
         right: -7px;
