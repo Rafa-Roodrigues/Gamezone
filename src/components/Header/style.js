@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { Link } from 'react-router-dom';
-
 export const Container = styled.header`
   max-width: var(--max-width);
   height: 4.375rem;
@@ -13,10 +11,17 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  position: relative;
+  a {
+    display: block;
+    max-width: 100px;
+
+    img {
+      width: 100%;
+    }
+  }
 `;
 
-export const Nav = styled.nav`
+export const NavDesktop = styled.nav`
   width: 100%;
   display: flex;
 
@@ -35,8 +40,37 @@ export const Nav = styled.nav`
     }
   }
 
+  div {
+    padding-right: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      span {
+        width: 18px;
+        height: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background: purple;
+        border-radius: 50%;
+
+        font-size: 0.75rem;
+
+        position: absolute;
+        right: -7px;
+        top: -10px;
+      }
+    }
+  }
+
   @media (max-width: 600px) {
-    justify-content: end;
+    justify-content: flex-end;
 
     ul {
       display:none;
@@ -46,129 +80,68 @@ export const Nav = styled.nav`
 
 export const NavMobile = styled.nav`
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-  display: flex;
-  justify-content: right;
+  display: ${({ status }) => status ? 'block' : 'none'};
 
-  z-index: 1;
+  background: #000000;
 
-  margin-left: ${({status}) => status ? '0' : '8000px'};
-
-  transition: margin 0.2s;
-  background: rgba(0, 0, 0, 0.8);
-
-  > div {
+  div {
     width: 80%;
     min-height: 100%;
     height: 100%;
 
     background: #ffffff;
 
-    display: ${({status}) => status ? 'flex' : 'none'};
+    margin-left: auto;
+    padding: 0 1rem;
+
+
+    display: flex;
     flex-direction: column;
 
-    #box-close-modal {
+    header {
       height: 4.375rem;
-      text-align: right;
-      padding: 0 1rem;
 
       display: flex;
-      justify-content: end;
       align-items: center;
-
-      button {
-        background: transparent;
-      }
+      justify-content: flex-end;
     }
 
     ul {
-      background: #ffffff;
       padding-top: 1rem;
 
       li {
-        width: 90%;
-      
-        padding: 1rem;
-        margin: 0 auto 1rem;
+        width: 100%;
+        display: block;
 
-        text-align:center;
-        font-size: 1.125rem;
-        
-        background: #ffffff;
-        border-radius: 5px;
-        transition: filter 0.2s;
-        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5) ; /*horizontal vertical espalhamento*/
-        cursor: pointer;
+        a {
+          min-width: 100%;
 
-        &:hover {
-          filter: brightness(0.9);
+          display: block;
+
+          padding: 1rem 0;
+          margin-bottom: 1rem;
+
+          background: #ffffff;
+          box-shadow: 0px 0px 5px #A5A5A5;
+          border-radius: 5px;
+
+          text-align: center;
         }
       }
     }
   }
-  
-`;
-
-export const LinkPageHome = styled(Link)`
-  display: flex;
-  align-items: center;
-
-  img {
-    max-width: 100px;
-    width: 100%;
-  }
 `;
 
 export const MenuToggle = styled.button`
-  width: 25px;
-  height: 16px;
+  display: none;
+  padding: 2px;
 
-  position: relative;
-
-  display: flex;
-  align-items: center;
-`;
-
-export const BoxCartLogin = styled.div`
-  display: flex;
-  align-items: center;
-
-  button {
+  @media(max-width: 600px) {
     display: flex;
-    align-items: center;
-
-    svg {
-      margin-right: 1rem;
-    }
-  }
-`;
-
-export const LinkPageCart = styled(Link)`
-  position: relative;
-
-  display: flex;
-  align-items: center;
-
-  svg {
-    margin-right: 1rem;
-  }
-
-  span {
-    width: 18px;
-    height: 18px;
-
-    font-size: 12px;
-    color: #ffffff;
-
-    background: purple;
-    border-radius: 50%;
-    position: absolute;
-    top: -10px;
-    right: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 `;

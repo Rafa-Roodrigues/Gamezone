@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { FaUserCircle, FaShoppingCart} from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 
@@ -10,12 +10,9 @@ import logoIMG from '../../assets/logo.svg';
 
 import { 
   Container, 
-  LinkPageHome, 
-  Nav, 
-  BoxCartLogin, 
+  NavDesktop, 
   MenuToggle, 
   NavMobile, 
-  LinkPageCart 
 } from './style';
 
 export function Header() {
@@ -30,43 +27,46 @@ export function Header() {
 
   return (
     <Container>
-      <LinkPageHome to="/">
+      <Link to="/">
         <img src={logoIMG} alt="logo da gamezone" />
-      </LinkPageHome>
+      </Link>
 
-      <Nav>
+      <NavDesktop>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/consoles">Consoles</Link></li>
           <li><Link to="/games">Jogos</Link></li>
         </ul>
 
-        <BoxCartLogin>
-          <LinkPageCart to="/cart">
+        <div>
+          <Link to="/cart">
             <span>{quantityOfCartInProduct}</span>
             <FaShoppingCart size={25}/>
-          </LinkPageCart>
-          <button>
-            <FaUserCircle id="user" size={25}/>
-          </button>
-        </BoxCartLogin>
-      </Nav>
+          </Link>
+        </div>
+      </NavDesktop>
 
       <NavMobile status={statusMenuToggle}>
         <div>
-          <div id="box-close-modal">
+          <header>
             <button onClick={() => setStatusMenuToggle(false)}><GrClose size={24}/></button>
-          </div>
+          </header>
           <ul>
-            <Link onClick={() => setStatusMenuToggle(false)} to="/">
-              <li>Home</li>
-            </Link>
-            <Link onClick={() => setStatusMenuToggle(false)} to="/consoles">
-              <li>Consoles</li>
-            </Link>
-            <Link onClick={() => setStatusMenuToggle(false)} to="/games">
-              <li>Jogos</li>
-            </Link>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/games">
+                Jogos
+              </Link>
+            </li>
+            <li>
+              <Link onClick={() => setStatusMenuToggle(false)} to="/consoles">
+                Consoles
+              </Link>
+            </li>
           </ul>
         </div>
       </NavMobile>
