@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.ul`
   max-width: var(--max-width);
   margin: 0 auto;
 

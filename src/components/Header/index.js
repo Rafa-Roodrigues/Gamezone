@@ -38,16 +38,14 @@ export function Header() {
           <li><Link to="/games">Jogos</Link></li>
         </ul>
 
-        <div>
-          <Link to="/cart">
-            <span>{quantityOfCartInProduct}</span>
-            <FaShoppingCart size={25}/>
-          </Link>
-        </div>
+        <Link to="/cart">
+          <span>{quantityOfCartInProduct}</span>
+          <FaShoppingCart size={25}/>
+        </Link>
       </NavDesktop>
 
       <NavMobile status={statusMenuToggle}>
-        <div>
+        <aside>
           <header>
             <button onClick={() => setStatusMenuToggle(false)}><GrClose size={24}/></button>
           </header>
@@ -68,7 +66,7 @@ export function Header() {
               </Link>
             </li>
           </ul>
-        </div>
+        </aside>
       </NavMobile>
 
       <MenuToggle 

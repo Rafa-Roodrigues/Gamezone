@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   max-width: var(--max-width);
@@ -12,35 +11,34 @@ export const Container = styled.section`
   gap: 20px;
 
   img {
+    max-width: 400px;
     width: 100%;
-  }
-
-  button {
-    background: purple;
-    border-radius: 5px;
-
-    padding: 0.75rem 1.5rem;
-    margin-top: 0.5rem;
-    
-    color: #ffffff;
-    font-size: 1rem;
   }
 
   p {
     margin: 0.5rem 0 0.875rem 0;
   }
 
-  strong {
+  h3 {
     display: block;
     font-size: 1.375rem;
+    margin-bottom: 1rem;
   }
 
-  #box-image {
-    max-width: 400px;
-    margin: 0 auto;
+   a {
+    width: 100%;
 
-    display: flex;
-    justify-content: center;
+    background: purple;
+    border-radius: 5px;
+
+    display: block;
+
+    padding: 0.75rem 1.5rem;
+    margin-top: 0.5rem;
+
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
   }
 
   @media (max-width: 800px) {
@@ -48,9 +46,10 @@ export const Container = styled.section`
 
     img {
       width: 70%;
+      margin: 0 auto;
     }
 
-    button {
+    a {
       width: 100%;
     }
   }

@@ -7,7 +7,7 @@ export const Container = styled.footer`
   background: #ffffff;
 `;
 
-export const Content = styled.footer`
+export const Content = styled.div`
   max-width: var(--max-width);
   margin: 0 auto;
 
@@ -20,11 +20,12 @@ export const Content = styled.footer`
   justify-content: center;
   align-items: center;
 
-  & > a {
+  p a {
     margin-bottom: 0.5rem;
+    margin-left: 5px;
   }
 
-  a > svg {
+  div a svg {
     margin-left: 5px;
   }
 `;

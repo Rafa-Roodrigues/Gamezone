@@ -1,24 +1,22 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
-export const Card = styled.div`
+export const Card = styled.li`
   height: auto;
-  display: flex;
-  flex-direction: column;
-
+  
   font-size: 1rem;
 
-  #box-image {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    img {
-      max-width: 150px;
-      width:100%;
-    }
+  img {
+    max-width: 150px;
+    width:100%;
   }
 
   #box-info {
+    width: 100%;
     flex: 1;
 
     display: flex;
@@ -26,17 +24,20 @@ export const Card = styled.div`
     justify-content: flex-end;
 
     margin: 0.5rem 0;
-
-    /* background: orange; */
   }
 
   span {
     font-size: 0.9375rem;
     margin-top: 5px;
   }
+
+  p {
+    font-weight: 600;
+  }
 `;
 
 export const LinkPageProduct = styled(Link)`
+  width: 100%;
   display: block;
 
   background: purple;

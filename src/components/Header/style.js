@@ -34,42 +34,40 @@ export const NavDesktop = styled.nav`
 
     list-style: none;
 
-    a {
+    li a {
       padding: 0.3125rem 0.625rem;
       margin: 0 0.3125rem;
     }
   }
 
-  div {
-    padding-right: 1rem;
+  > a {
+    display: flex;
+    align-items: center;
 
-    a {
+    position: relative;
+
+    margin-right: 0.5rem;
+
+    span {
+      width: 18px;
+      height: 18px;
+
       display: flex;
       align-items: center;
+      justify-content: center;
+      
+      background: purple;
+      border-radius: 50%;
 
-      position: relative;
+      font-size: 0.75rem;
+      color: #ffffff;
 
-      span {
-        width: 18px;
-        height: 18px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        background: purple;
-        border-radius: 50%;
-
-        font-size: 0.75rem;
-        color: #ffffff;
-
-        position: absolute;
-        right: -7px;
-        top: -10px;
-      }
+      position: absolute;
+      right: -7px;
+      top: -10px;
     }
   }
-
+  
   @media (max-width: 600px) {
     justify-content: flex-end;
 
@@ -90,7 +88,7 @@ export const NavMobile = styled.nav`
 
   background: #000000;
 
-  div {
+  aside {
     width: 80%;
     min-height: 100%;
     height: 100%;

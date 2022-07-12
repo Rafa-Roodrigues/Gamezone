@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -35,11 +35,9 @@ export function InfoProduct() {
   return (
     product.length > 0 ? (
       <>
-        <Back endpoint={'/'}>Voltar</Back>
+        <Back endpoint="/">Voltar</Back>
         <Container>
-          <div id="box-image">
-            <img src={product[0].image} alt={product[0].name} />
-          </div>
+          <img src={product[0].image} alt={product[0].name} />
           <div id="box-info">
             <h2>{product[0].name}</h2>
 
@@ -48,8 +46,8 @@ export function InfoProduct() {
                 {product[0].description}
               </p>
             )}
-            <strong>{formatCurrency(product[0].price)}</strong>
-            <button onClick={handleAddProductToCart}>Adicionar ao Carrinho</button>
+            <h3>{formatCurrency(product[0].price)}</h3>
+            <Link to="/cart" onClick={handleAddProductToCart}>Adicionar ao Carrinho</Link>
           </div>    
         </Container>
       </>
