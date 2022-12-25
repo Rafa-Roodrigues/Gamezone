@@ -1,6 +1,6 @@
 # Gamezone
 <h4>
-  Projeto pessoal que foi realizado para aprender Redux que é uma biblioteca para gerenciamento de estado global, nele é simulado um carrinho de compras.
+  Projeto pessoal que foi realizado para aprender Redux que é uma biblioteca para gerenciamento de estado global. Neste projeto é simulado um carrinho de compras.
 </h4>
 
 ## Tecnologias Utilizadas
